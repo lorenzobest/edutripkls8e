@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taiwan Edutrip - Mandarin</title>
+  <style>
+    /* === style.css === */
+    /* Taiwan Color Theme */
+/* Taiwan Color Theme */
+:root {
+    --primary: #0057B7;  /* Taiwan blue */
+    --secondary: #FE0000; /* Taiwan red */
+    --accent: #FFD700;    /* Gold */
+    --light: #F9F5FF;
+    --dark: #1A2E4D;
+    --text: #333;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+body {
+    background-color: var(--light);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--secondary);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0, 87, 183, 0.3), rgba(254, 0, 0, 0.3)),
+                url('church.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin: 0 auto 30px;
+    max-width: 700px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Styles */
+.section {
+    padding: 60px 5%;
+    background-color: white;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: var(--secondary);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+.content img {
+    width: 100%;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Facts Section */
+.facts {
+    padding: 100px 5%;
+    background: var(--light);
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fact-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.fact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.fact-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 2rem;
+}
+
+.fact-card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.fact-card p {
+    color: #666;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 60px 5%;
+    background: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 250px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 80px 5% 30px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-col h3 {
+    color: var(--secondary);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.footer-col p {
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.social-links a:hover {
+    opacity: 1;
+    color: var(--secondary);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: var(--secondary);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-links {
+        display: none; /* For mobile, you might want to add a hamburger menu */
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Content Sections */
+.section {
+    padding: 100px 5%;
+    background-color: white;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    display: inline-block;
+    position: relative;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: var(--secondary);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.content h3 {
+    color: var(--primary);
+    margin: 30px 0 15px;
+    font-size: 1.5rem;
+}
+
+/* Mandarin Box Styles */
+.mandarin-box {
+    background: #fff8e1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.vocab-item {
+    background: white;
+    border-left: 6px solid var(--secondary);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.vocab-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--secondary);
+}
+
+.vocab-item p {
+    font-size: 1rem;
+    color: var(--text);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .facts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+    @media (max-width: 600px) {
+      .section h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <nav>
+        <a href="#" class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Flag_of_the_Republic_of_China.svg/1200px-Flag_of_the_Republic_of_China.svg.png" alt="Taiwan Flag">
+            Taiwan<span style="color: var(--secondary);">Edutrip</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="edutrip.html">Home</a></li>
+            <li><a href="agama.html">Agama</a></li>
+            <li><a href="bahasaindonesia.html">Bahasa Indonesia</a></li>
+            <li><a href="bahasainggris.html">Bahasa Inggris</a></li>
+            <li><a href="bahasamandarin.html">Bahasa Mandarin</a></li>
+            <li><a href="IPS.html">IPS</a></li>
+            <li><a href="ppkn.html">PKN</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="hero" style="background-image: linear-gradient(rgba(0, 87, 183, 0.3), rgba(254, 0, 0, 0.3)), url('https://a.travel-assets.com/findyours-php/viewfinder/images/res70/488000/488541-chiang-kai-shek-memorial-hall.jpg')">
+    <div class="hero-content">
+        <h1>Belajar Bahasa Mandarin</h1>
+        <p>Menjelajahi bahasa dan budaya Tionghoa melalui pengalaman edutrip ke Taiwan</p>
+        <div style="padding-top: 100px;"></div>
+    </div>
+</section>
+
+        
+  <section class="section">
+    <h2>认识新朋友</h2>
+    <div class="mandarin-box">
+      <p>我的新朋友叫劉軒浩。他今年十三岁。他的生日是八月八日。他的眼睛小小的。他有眼镜。他的头发短短的和黑色。他的身体不高也不矮。他的脸圆圆的。他在Sacred Heart学校读书。他今年上八年级。他喜欢吃珍珠奶茶。他的爱好是玩电脑游戏。</p>
+      <p><em>Terjemahan:</em> Teman baruku adalah Liu Xuanhao. Dia berusia tiga belas tahun. Ulang tahunnya tanggal 8 Agustus. Matanya kecil. Dia berkacamata. Rambutnya pendek dan hitam. Dia tidak tinggi atau pendek. Dia memiliki wajah bulat. Dia bersekolah di Sacred Heart School. Dia berada di kelas delapan tahun ini. Dia suka teh susu bubble. Hobinya adalah bermain game komputer.</p>
+    </div>
+
+    <h2>Perjalanan Kami</h2>
+    <div class="mandarin-box">
+      <p>我们去西门町夜市，国立故宫博物院, 台北一零一, 九份老街, 基隆夜市，鹿港老街，逢甲夜市，等等。我最喜欢的活动是与新朋友们一起玩西个游戏。在Taiwan我们看很多美味佳肴，好人，和令人惊叹的景色。我学习Taiwan文化.</p>
+      <p><em>Terjemahan:</em> Kami pergi ke Pasar Malam Ximending, Museum Istana Nasional, Taipei 101, Jalan Tua Jiufen, Pasar Malam Keelung, Jalan Tua Lukang, Pasar Malam Fengjia, dll. Aktivitas favoritku adalah bermain game dengan teman-teman baruku. Di Taiwan kami melihat banyak makanan lezat, orang-orang baik, dan pemandangan menakjubkan. Saya mempelajari budaya Taiwan</p>
+    </div>
+
+    <h2>Kosakata Mandarin</h2>
+    <div class="vocab-grid">
+      <div class="vocab-item">
+        <h4>问候 (Sapaan)</h4>
+        <p>你好 (nǐ hǎo) - Halo</p>
+        <p>早上好 (zǎo shang hǎo) - Selamat pagi</p>
+        <p>晚上好 (wǎn shang hǎo) - Selamat malam</p>
+      </div>
+      <div class="vocab-item">
+        <h4>数字 (Angka)</h4>
+        <p>一 (yī) - 1</p>
+        <p>二 (èr) - 2</p>
+        <p>三 (sān) - 3</p>
+        <p>十 (shí) - 10</p>
+      </div>
+      <div class="vocab-item">
+        <h4>描述 (Deskripsi)</h4>
+        <p>高 (gāo) - Tinggi</p>
+        <p>矮 (ǎi) - Pendek</p>
+        <p>长 (cháng) - Panjang</p>
+        <p>短 (duǎn) - Pendek</p>
+      </div>
+      <div class="vocab-item">
+        <h4>学校 (Sekolah)</h4>
+        <p>学生 (xué shēng) - Siswa</p>
+        <p>老师 (lǎo shī) - Guru</p>
+        <p>书 (shū) - Buku</p>
+        <p>学习 (xué xí) - Belajar</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Taiwan Edutrip 2025</h3>
+            <p>A memorable learning experience from March 8-15, 2025</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h3>Destinations</h3>
+            <ul class="footer-links">
+                <li><a href="#">Taipei 101</a></li>
+                <li><a href="#">Yehliu Geopark</a></li>
+                <li><a href="#">Night Markets</a></li>
+                <li><a href="#">Holy Family Catholic Church</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Contact</h3>
+            <p><i class="fas fa-envelope"></i> info@taiwanedutrip.com</p>
+            <p><i class="fas fa-phone"></i> +62 123 4567 890</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Taiwan Edutrip. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

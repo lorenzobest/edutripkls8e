@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKN | National Palace Museum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Taiwan Color Theme */
+/* style.css */
+/* Taiwan Color Theme */
+:root {
+    --primary: #0057B7;  /* Taiwan blue */
+    --secondary: #FE0000; /* Taiwan red */
+    --accent: #FFD700;    /* Gold */
+    --light: #F9F5FF;
+    --dark: #1A2E4D;
+    --text: #333;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+body {
+    background-color: var(--light);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--secondary);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0, 87, 183, 0.3), rgba(254, 0, 0, 0.3)),
+                url('national.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin: 0 auto 30px;
+    max-width: 700px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Styles */
+.section {
+    padding: 60px 5%;
+    background-color: white;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+    text-align: center;
+}
+
+.section p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+/* Facts Section */
+.facts {
+    padding: 100px 5%;
+    background: var(--light);
+}
+
+.facts h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+    text-align: center;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.fact-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.fact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.fact-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 2rem;
+}
+
+.fact-card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.fact-card p {
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 80px 5% 30px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-col h3 {
+    color: var(--secondary);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.footer-col p {
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.social-links a:hover {
+    opacity: 1;
+    color: var(--secondary);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: var(--secondary);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-links {
+        display: none; /* For mobile, you might want to add a hamburger menu */
+    }
+    
+    .section h2 {
+        font-size: 2rem;
+    }
+}
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header>
+    <nav>
+        <a href="#" class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Flag_of_the_Republic_of_China.svg/1200px-Flag_of_the_Republic_of_China.svg.png" alt="Taiwan Flag">
+            Taiwan<span style="color: var(--secondary);">Edutrip</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="edutrip.html">Home</a></li>
+            <li><a href="agama.html">Agama</a></li>
+            <li><a href="bahasaindonesia.html">Bahasa Indonesia</a></li>
+            <li><a href="bahasainggris.html">Bahasa Inggris</a></li>
+            <li><a href="bahasamandarin.html">Bahasa Mandarin</a></li>
+            <li><a href="IPS.html">IPS</a></li>
+            <li><a href="ppkn.html">PKN</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>National Palace Museum</h1>
+            <p>Explore the rich history and culture of Taiwan through the treasures housed in the National Palace Museum.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>About the Museum</h2>
+        <p>The National Palace Museum is one of the most renowned museums in the world, showcasing a vast collection of Chinese imperial artifacts and artworks. It is located in Taipei, Taiwan, and serves as a cultural bridge between the past and present, offering visitors a glimpse into the rich heritage of Chinese civilization.</p>
+    </section>
+
+    <section class="facts">
+        <h2>Interesting Facts</h2>
+        <div class="facts-grid">
+            <div class="fact-card">
+                <div class="fact-icon"><i class="fas fa-paint-brush"></i></div>
+                <h3>Over 700,000 Artifacts</h3>
+                <p>The museum houses over 700,000 pieces of ancient Chinese artifacts, making it one of the largest collections in the world.</p>
+            </div>
+            <div class="fact-card">
+                <div class="fact-icon"><i class="fas fa-clock"></i></div>
+                <h3>Established in 1925</h3>
+                <p>Originally established in Beijing, the museum was relocated to Taiwan in 1949 during the Chinese Civil War.</p>
+            </div>
+            <div class="fact-card">
+                <div class="fact-icon"><i class="fas fa-globe"></i></div>
+                <h3>International Recognition</h3>
+                <p>The museum is recognized globally for its extensive collection and is a popular destination for tourists and scholars alike.</p>
+            </div>
+            <div class="fact-card">
+                <div class="fact-icon"><i class="fas fa-book"></i></div>
+                <h3>Educational Programs</h3>
+                <p>The museum offers various educational programs and workshops to promote understanding of Chinese culture and history.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Taiwan Edutrip 2025</h3>
+                <p>A memorable learning experience from March 8-15, 2025</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Destinations</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Taipei 101</a></li>
+                    <li><a href="#">Yehliu Geopark</a></li>
+                    <li><a href="#">Night Markets</a></li>
+                    <li><a href="#">Holy Family Catholic Church</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p><i class="fas fa-envelope"></i> info@taiwanedutrip.com</p>
+                <p><i class="fas fa-phone"></i> +62 123 4567 890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Taiwan Edutrip. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
